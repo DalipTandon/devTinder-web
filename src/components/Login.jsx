@@ -10,6 +10,7 @@ import { BASE_URL } from "../utils/constant";
 const Login = () => {
     const [emailId,setEmailId]=useState("Dalip@gmail.com");
     const [password,setPassword]=useState("Dalip@123");
+    const[error,setError]=useState("");
   const dispatch=useDispatch();
   const navigate=useNavigate();
     const handleSubmit=async()=>{
@@ -22,8 +23,7 @@ const Login = () => {
            dispatch(addUser(res.data)); 
            navigate("/")        
         }catch(error){
-            console.log(error);
-            
+          setError(error.response.data) 
         }
     }
   return (
@@ -56,6 +56,7 @@ const Login = () => {
               className="input input-bordered w-full max-w-xs"
             />
           </label>
+          <p className="text-red-500">{error}</p>
           <div className="card-actions justify-center">
             <button className="btn btn-primary my-3 " onClick={handleSubmit}>Login</button>
           </div>
