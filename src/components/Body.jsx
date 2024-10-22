@@ -38,12 +38,14 @@ const Body=()=>{
         fetchData();
     },[])
     return(
-
-        <div>
+        
+        <div> 
             <Navbar/>
             <Outlet/>
             <Footer/>
+
         </div>
+
     )
 }
 
