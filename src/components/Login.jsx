@@ -20,10 +20,11 @@ const Login = () => {
                     emailId,password
                 },{withCredentials:true}
             )
-           dispatch(addUser(res.data)); 
-           navigate("/")        
+           dispatch(addUser(res.data.data)); 
+          //  console.log(res.data.data);
+          return navigate("/")        
         }catch(error){
-          setError(error.response.data) 
+          setError(error?.response?.data) 
         }
     }
   return (

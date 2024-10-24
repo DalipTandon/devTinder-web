@@ -13,11 +13,11 @@ import { useEffect } from "react";
 
 const Body=()=>{
     const dispatch=useDispatch();
-    const user=useSelector((store)=>store.user);
+    const userData=useSelector((store)=>store.user);
     const navigate=useNavigate();
 
     const fetchData=async()=>{
-        if(user) return;
+        if(userData) return;
         try{
         const res=await axios.get(BASE_URL+"/profile/view",{
             withCredentials:true

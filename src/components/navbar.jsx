@@ -6,10 +6,10 @@ import { removeUser } from "../utils/userSlice";
 
 
 const Navbar=()=>{
-  const user=useSelector((store)=>store.user)
+  const user=useSelector(store=>store.user)
   const dispatch=useDispatch();
   const navigate=useNavigate();
-  // console.log(user);
+  // console.log(user.firstName);
 
   const handleLogout=async()=>{
     try{
@@ -31,7 +31,7 @@ const Navbar=()=>{
       </div>
       {user &&
       <div className="flex-none gap-2">
-        <p>Welcome, {user?.firstName}</p>
+        <p>Welcome, {user?.firstName || "Hello"}</p>
         <div className="dropdown dropdown-end mx-6">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full">
