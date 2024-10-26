@@ -83,8 +83,8 @@ const Login = () => {
               <span className="label-text">Enter your password</span>
             </div>
             <input
-              type="text"
-              placeholder="Enter pasword"
+              type="password"
+              placeholder="Enter password"
               value={password}
               onChange={(e)=>setPassword(e.target.value)}
               className="input input-bordered w-full max-w-xs"
